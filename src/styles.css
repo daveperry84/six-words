@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+}
+
+h1, h2, h3 {
+    font-family: 'Notable', sans-serif;
+}
+
+.btn-primary {
+    color: #222;
+    background: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-primary:hover {
+    color: #eee;
+    background: #d39e00;
+    border-color: #d39e00;
+}
+
+.btn-secondary {
+    color: #222;
+    background: #bcc3ca;
+    border-color: #bcc3ca;
+}
+
+.btn-secondary:hover {
+    color: #222;
+    background: #8d99a4;
+    border-color: #8d99a4;
+}

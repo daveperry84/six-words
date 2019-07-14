@@ -1,12 +1,5 @@
-.header-nav {
-    height: 60px;
-    background: #d39e00;
-    color: #222;
-    font-family: 'Notable', sans-serif;
-}
-
 .home-banner {
-    background-image: url('./../assets/images/dawid-zawila-fiu89zdeTQI-unsplash.jpg');
+    background-image: url('./../../../assets/images/dawid-zawila-fiu89zdeTQI-unsplash.jpg');
     height: 365px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,6 +15,5 @@
 }
 
 .banner-overlay h1 {
-    font-family: 'Notable', sans-serif;
     font-size: 70px;
 }
