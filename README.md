@@ -1,4 +1,8 @@
-# SixWords
+# 6 Words
+
+A game of 6 words...choose words that fit 6 different categories and begin with a chosen letter...but be sure not to choose the same words as your friends.
+
+--------------------------------------------------------------------------------------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
