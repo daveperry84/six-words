@@ -1,6 +1,8 @@
 # 6 Words
 
-A game of 6 words...choose words that fit 6 different categories and begin with a chosen letter...but be sure not to choose the same words as your friends.
+Choose words that fit 6 different categories...but be sure not to choose the same words as your friends.
+
+An angular 8 application, built with bootstrap 4, SASS and angular material.
 
 --------------------------------------------------------------------------------------------
 
