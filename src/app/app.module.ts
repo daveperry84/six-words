@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SetupGameComponent } from './pages/setup-game/setup-game.component';
 import { PlayGameComponent } from './pages/play-game/play-game.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const ROUTES: Route[] = [
   { path: '', component: HomeComponent },
@@ -23,7 +24,8 @@ const ROUTES: Route[] = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
