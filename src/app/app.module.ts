@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlayGameComponent } from './pages/play-game/play-game.component';
+import { RandomLetterService } from './services/random-letter.service';
 
 const ROUTES: Route[] = [
   { path: '', component: HomeComponent },
@@ -31,7 +32,9 @@ const ROUTES: Route[] = [
     MatInputModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    RandomLetterService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
