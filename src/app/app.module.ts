@@ -4,9 +4,11 @@ import { AppComponent } from './app.component';
 import { RouterModule, Route } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { SetupGameComponent } from './pages/setup-game/setup-game.component';
-import { PlayGameComponent } from './pages/play-game/play-game.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PlayGameComponent } from './pages/play-game/play-game.component';
 
 const ROUTES: Route[] = [
   { path: '', component: HomeComponent },
@@ -25,7 +27,9 @@ const ROUTES: Route[] = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,9 @@
 <div class="container mt-3">
     <h3 class="h2">Play...</h3>
+
+    <div class="d-flex flex-column">
+        <mat-form-field *ngFor="let control of formControls" class="w-50">
+            <input matInput [placeholder]="control.title" [formControl]="control.field">
+        </mat-form-field>
+    </div>
 </div>
