@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { GameTimerService, IGameTimer } from 'src/app/services/game-timer.service';
 
 @Component({
   selector: 'play-game-fixed-footer',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./play-game-fixed-footer.component.scss']
 })
 export class PlayGameFixedFooterComponent {
-
+  
   @Input() public letter: string;
 
 }

@@ -1,0 +1,7 @@
+<div>
+    <button type="button" class="btn btn-dark" (click)="startTimer()" *ngIf="!gameTimer.started">Start Timer</button>
+    <div class="d-flex flex-column align-items-center" *ngIf="gameTimer.started">
+        <p class="mb-0">Time Remaining</p>
+        <h3 class="mb-0">{{gameTimer.minutes}}:{{gameTimer.seconds | number:'2.0'}}</h3>
+    </div>
+</div>

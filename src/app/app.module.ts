@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PlayGameComponent } from './pages/play-game/play-game.component';
 import { RandomLetterService } from './services/random-letter.service';
 import { PlayGameFixedFooterComponent } from './components/play-game-fixed-footer/play-game-fixed-footer.component';
+import { GameTimerComponent } from './components/game-timer/game-timer.component';
+import { GameTimerService } from './services/game-timer.service';
 
 const ROUTES: Route[] = [
   { path: '', component: HomeComponent },
@@ -25,7 +27,8 @@ const ROUTES: Route[] = [
     SetupGameComponent,
     PlayGameComponent,
     HeaderComponent,
-    PlayGameFixedFooterComponent
+    PlayGameFixedFooterComponent,
+    GameTimerComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ const ROUTES: Route[] = [
     ReactiveFormsModule
   ],
   providers: [
-    RandomLetterService
+    RandomLetterService,
+    GameTimerService
   ],
   bootstrap: [AppComponent]
 })
