@@ -43,7 +43,6 @@ export class PlayGameComponent implements OnInit {
       });
 
       this.randomLetter = this._letterService.getRandomLetter();
-
     }
 
 }

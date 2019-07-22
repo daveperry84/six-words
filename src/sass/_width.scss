@@ -1,0 +1,71 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+.w-sm {
+    @include media-breakpoint-up(sm) {
+        &-25 {
+            width: 25% !important;
+        }
+        &-50 {
+            width: 50% !important;
+        }
+        &-75 {
+            width: 75% !important;
+        }
+        &-100 {
+            width: 100% !important;
+        }
+    }
+}
+
+.w-md {
+    @include media-breakpoint-up(md) {
+        &-25 {
+            width: 25% !important;
+        }
+        &-50 {
+            width: 50% !important;
+        }
+        &-75 {
+            width: 75% !important;
+        }
+        &-100 {
+            width: 100% !important;
+        }
+    }
+}
+
+.w-lg {
+    @include media-breakpoint-up(lg) {
+        &-25 {
+            width: 25% !important;
+        }
+        &-50 {
+            width: 50% !important;
+        }
+        &-75 {
+            width: 75% !important;
+        }
+        &-100 {
+            width: 100% !important;
+        }
+    }
+}
+
+.w-xl {
+    @include media-breakpoint-up(xl) {
+        &-25 {
+            width: 25% !important;
+        }
+        &-50 {
+            width: 50% !important;
+        }
+        &-75 {
+            width: 75% !important;
+        }
+        &-100 {
+            width: 100% !important;
+        }
+    }
+}
