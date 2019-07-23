@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Form } from '@angular/forms';
 import { RandomLetterService } from 'src/app/services/random-letter.service';
+import { GameTimerService } from 'src/app/services/game-timer.service';
 
 interface ICategoryField {
   id: string;
@@ -15,6 +16,7 @@ interface ICategoryField {
 })
 export class PlayGameComponent implements OnInit {
     private _letterService: RandomLetterService;
+    private _gameTimerService: GameTimerService;
     private _categories: Array<any> = [
         { id: 'boys', title: 'Boys Name' },
         { id: 'girls', title: 'Girls Name' },
@@ -25,13 +27,20 @@ export class PlayGameComponent implements OnInit {
     ];
 
     public formControls: Array<ICategoryField> = [];
-    public randomLetter: string;
+    public randomLetter: string = '?';
 
-    constructor(letterService: RandomLetterService) {
+    constructor(letterService: RandomLetterService, gameTimerService: GameTimerService) {
         this._letterService = letterService;
+        this._gameTimerService = gameTimerService;
     }
 
     ngOnInit() {
+      this._gameTimerService.gameStarted().subscribe((gameStarted) => {
+        if(gameStarted) {
+          this.randomLetter = this._letterService.getRandomLetter();
+        }
+      });
+
       this._categories.forEach(category => {
         let field = {
           id: category.id,
@@ -41,8 +50,6 @@ export class PlayGameComponent implements OnInit {
 
         this.formControls = [...this.formControls, field];
       });
-
-      this.randomLetter = this._letterService.getRandomLetter();
     }
 
 }

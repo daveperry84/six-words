@@ -9,17 +9,23 @@ export interface IGameTimer {
 
 export class GameTimerService {
   private _gameTimerSubject: BehaviorSubject<IGameTimer> = new BehaviorSubject<IGameTimer>({ minutes: 3, seconds: 0, started: false, finished: false });
+  private _gameStartedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private _timer: any;
   private _gameTimer: IGameTimer;
 
   public getTime(): Observable<IGameTimer> {
-      return this._gameTimerSubject.asObservable();
+    return this._gameTimerSubject.asObservable();
+  }
+
+  public gameStarted(): Observable<boolean> {
+    return this._gameStartedSubject.asObservable();
   }
 
   public startTimer(): void {
     this._gameTimer = this._gameTimerSubject.value;
     this._gameTimer.started = true;
     this._gameTimerSubject.next(this._gameTimer);
+    this._gameStartedSubject.next(true);
 
     this._timer = setInterval(() => {
       let minutes = this._gameTimer.minutes;
