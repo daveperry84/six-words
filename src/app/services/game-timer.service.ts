@@ -3,13 +3,12 @@ import { Observable, BehaviorSubject } from "rxjs";
 export interface IGameTimer {
     minutes: number;
     seconds: number;
-    started: boolean;
-    finished: boolean;
 }
 
 export class GameTimerService {
-  private _gameTimerSubject: BehaviorSubject<IGameTimer> = new BehaviorSubject<IGameTimer>({ minutes: 3, seconds: 0, started: false, finished: false });
+  private _gameTimerSubject: BehaviorSubject<IGameTimer> = new BehaviorSubject<IGameTimer>({ minutes: 0, seconds: 10 });
   private _gameStartedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private _gameEndedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private _timer: any;
   private _gameTimer: IGameTimer;
 
@@ -21,10 +20,12 @@ export class GameTimerService {
     return this._gameStartedSubject.asObservable();
   }
 
+  public gameEnded(): Observable<boolean> {
+    return this._gameEndedSubject.asObservable();
+  }
+
   public startTimer(): void {
     this._gameTimer = this._gameTimerSubject.value;
-    this._gameTimer.started = true;
-    this._gameTimerSubject.next(this._gameTimer);
     this._gameStartedSubject.next(true);
 
     this._timer = setInterval(() => {
@@ -46,7 +47,6 @@ export class GameTimerService {
 
   private endTimer(): void {
     clearInterval(this._timer);
-    this._gameTimer.finished = true;
-    this._gameTimerSubject.next(this._gameTimer);
+    this._gameEndedSubject.next(true);
   }
 }

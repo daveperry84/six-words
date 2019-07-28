@@ -13,6 +13,7 @@ import { RandomLetterService } from './services/random-letter.service';
 import { PlayGameFixedFooterComponent } from './components/play-game-fixed-footer/play-game-fixed-footer.component';
 import { GameTimerComponent } from './components/game-timer/game-timer.component';
 import { GameTimerService } from './services/game-timer.service';
+import { ScoreButtonComponent } from './components/score-button/score-button.component';
 
 const ROUTES: Route[] = [
   { path: '', component: HomeComponent },
@@ -28,7 +29,8 @@ const ROUTES: Route[] = [
     PlayGameComponent,
     HeaderComponent,
     PlayGameFixedFooterComponent,
-    GameTimerComponent
+    GameTimerComponent,
+    ScoreButtonComponent
   ],
   imports: [
     BrowserModule,

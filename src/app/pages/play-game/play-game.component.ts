@@ -3,10 +3,11 @@ import { FormControl, Form } from '@angular/forms';
 import { RandomLetterService } from 'src/app/services/random-letter.service';
 import { GameTimerService } from 'src/app/services/game-timer.service';
 
-interface ICategoryField {
+export interface ICategoryField {
   id: string;
   title: string;
   field: FormControl;
+  score: number;
 }
 
 @Component({
@@ -28,6 +29,9 @@ export class PlayGameComponent implements OnInit {
 
     public formControls: Array<ICategoryField> = [];
     public randomLetter: string = '?';
+    public gameStarted: boolean = false;
+    public gameEnded: boolean = false;
+    public totalScore: number;
 
     constructor(letterService: RandomLetterService, gameTimerService: GameTimerService) {
         this._letterService = letterService;
@@ -36,20 +40,37 @@ export class PlayGameComponent implements OnInit {
 
     ngOnInit() {
       this._gameTimerService.gameStarted().subscribe((gameStarted) => {
+        this.gameStarted = gameStarted;
         if(gameStarted) {
           this.randomLetter = this._letterService.getRandomLetter();
         }
+      });
+
+      this._gameTimerService.gameEnded().subscribe((gameEnded) => {
+        this.gameEnded = gameEnded;
+        this.calculateScore();
       });
 
       this._categories.forEach(category => {
         let field = {
           id: category.id,
           title: category.title,
-          field: new FormControl('')
+          field: new FormControl(''),
+          score: 10
         }
 
         this.formControls = [...this.formControls, field];
       });
+    }
+
+    public calculateScore(): void {
+      let score = 0;
+
+      this.formControls.forEach((control) => {
+        score += control.score;
+      })
+
+      this.totalScore = score;
     }
 
 }

@@ -11,6 +11,8 @@ export class GameTimerComponent implements OnInit {
   private _gameTimerService: GameTimerService;
 
   public gameTimer: IGameTimer;
+  public gameStarted: boolean;
+  public gameEnded: boolean;
   
   constructor(gameTimerService: GameTimerService) {
     this._gameTimerService = gameTimerService;
@@ -19,7 +21,15 @@ export class GameTimerComponent implements OnInit {
   ngOnInit(): void {
     this._gameTimerService.getTime().subscribe((timer) => {
       this.gameTimer = timer;
-    })
+    });
+
+    this._gameTimerService.gameStarted().subscribe((gameStarted) => {
+      this.gameStarted = gameStarted;
+    });
+
+    this._gameTimerService.gameEnded().subscribe((gameEnded) => {
+      this.gameEnded = gameEnded;
+    });
   }
 
   public startTimer(): void {

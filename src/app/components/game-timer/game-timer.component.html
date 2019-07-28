@@ -1,6 +1,6 @@
 <div>
-    <button type="button" class="btn btn-dark" (click)="startTimer()" *ngIf="!gameTimer.started"><i class="fas fa-stopwatch pr-1"></i>Start Timer</button>
-    <div class="d-flex flex-column align-items-center" *ngIf="gameTimer.started">
+    <button type="button" class="btn btn-dark" (click)="startTimer()" *ngIf="!gameStarted"><i class="fas fa-stopwatch pr-1"></i>Start Timer</button>
+    <div class="d-flex flex-column align-items-center" *ngIf="gameStarted">
         <p class="mb-0">Time Remaining</p>
         <h3 class="mb-0">{{gameTimer.minutes}}:{{gameTimer.seconds | number:'2.0'}}</h3>
     </div>

@@ -1,0 +1,13 @@
+<button class="btn score-btn" [ngClass]="{ 
+    'btn-success': control.score === 10,
+    'btn-secondary': control.score !== 0 && control.score !== 10,
+    'btn-danger': control.score === 0
+ }" (click)="setScoreForField(control)">
+    <i class="fas" [ngClass]="{ 
+        'fa-trophy': control.score === 10,
+        'fa-user': control.score === 5,
+        'fa-user-friends': control.score === 2,
+        'fa-users': control.score === 1,
+        'fa-times': control.score === 0
+     }"></i>
+</button>

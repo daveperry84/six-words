@@ -1,6 +1,7 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "./../../../sass/variables";
 
 .play-container {
     @include media-breakpoint-down(sm) {
@@ -10,22 +11,60 @@
             font-size: 16px;
         }
     }
-}
 
-.letter-panel {
-    width: 200px;
-    height: 200px;
-    background-color: #ffc107;
-    border-radius: 10px;
-    
-    .random-letter {
-        font-size: 160px;
-        font-weight: bold;
+    .game-play-board {
+        .game-timer {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .letter-panel {
+            width: 200px;
+            height: 200px;
+            background-color: #ffc107;
+            border-radius: 10px;
+            
+            .random-letter {
+                font-size: 160px;
+                font-weight: bold;
+            }
+        }
     }
-}
 
-.game-timer {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    .game-answer-board {
+        .game-answers {
+            width: calc(100% - 60px);
+            border-bottom: 1px solid rgba(0,0,0,.35);
+        
+            .category-title {
+                color: rgba(0,0,0,.35);
+                font-size: 13px;
+            }
+        
+            .category-answer {
+                font-size: 18px;
+            }
+        }
+
+        .letter-panel {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 70px;
+            height: 70px;
+            background-color: #ffc107;
+            border-radius: 5px;
+
+            .random-letter {
+                font-size: 55px;
+                font-weight: bold;
+            }
+        }
+
+        .total-score {
+            font-size: 140px;
+            font-weight: bold;
+        }
+    }
 }
