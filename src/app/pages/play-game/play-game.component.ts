@@ -37,7 +37,6 @@ export class PlayGameComponent implements OnInit {
 
     ngOnInit(): void {
       this._gameCategoriesService.getRandomCategories().subscribe((categories) => {
-        console.log(categories);
         categories.forEach(category => {
           let field = {
             id: category.id,
