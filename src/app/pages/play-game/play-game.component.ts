@@ -4,6 +4,8 @@ import { RandomLetterService } from 'src/app/shared/services/random-letter.servi
 import { GameTimerService } from 'src/app/shared/services/game-timer.service';
 import { GameScoreService } from 'src/app/shared/services/game-score.service';
 import { ICategoryField } from 'src/app/shared/types/category-field.interface';
+import { ICategory } from 'src/app/shared/types/category.interface';
+import { GameCategoriesService } from 'src/app/shared/services/game-categories.service';
 
 @Component({
   selector: 'app-play-game',
@@ -14,14 +16,8 @@ export class PlayGameComponent implements OnInit {
     private _letterService: RandomLetterService;
     private _gameTimerService: GameTimerService;
     private _gameScoreService: GameScoreService;
-    private _categories: Array<any> = [
-        { id: 'boys', title: 'Boys Name' },
-        { id: 'girls', title: 'Girls Name' },
-        { id: 'movie', title: 'Movie' },
-        { id: 'location', title: 'Location' },
-        { id: 'animal', title: 'Animal' },
-        { id: 'fruitveg', title: 'Fruit or Vegetable' },
-    ];
+    private _gameCategoriesService: GameCategoriesService;
+    private _categories: Array<ICategory>;
 
     public formControls: Array<ICategoryField> = [];
     public randomLetter: string = '?';
@@ -29,13 +25,32 @@ export class PlayGameComponent implements OnInit {
     public gameEnded: boolean = false;
     public totalScore: number;
 
-    constructor(letterService: RandomLetterService, gameTimerService: GameTimerService, gameScoreService: GameScoreService) {
+    constructor(letterService: RandomLetterService, 
+      gameTimerService: GameTimerService, 
+      gameScoreService: GameScoreService,
+      gameCategoriesService: GameCategoriesService) {
         this._letterService = letterService;
         this._gameTimerService = gameTimerService;
         this._gameScoreService = gameScoreService;
+        this._gameCategoriesService = gameCategoriesService;
     }
 
     ngOnInit(): void {
+      this._gameCategoriesService.getRandomCategories().subscribe((categories) => {
+        console.log(categories);
+        categories.forEach(category => {
+          let field = {
+            id: category.id,
+            title: category.title,
+            field: new FormControl(''),
+            score: 10,
+            valid: true
+          }
+  
+          this.formControls = [...this.formControls, field];
+        });
+      });
+
       this._gameTimerService.gameStarted().subscribe((gameStarted) => {
         this.gameStarted = gameStarted;
         if(gameStarted) {
@@ -49,18 +64,6 @@ export class PlayGameComponent implements OnInit {
       });
 
       this._gameScoreService.getTotalScore().subscribe((score) => this.totalScore = score);
-
-      this._categories.forEach(category => {
-        let field = {
-          id: category.id,
-          title: category.title,
-          field: new FormControl(''),
-          score: 10,
-          valid: true
-        }
-
-        this.formControls = [...this.formControls, field];
-      });
     }
 
     public validateAnswersAndCalculate(): void {

@@ -5,6 +5,8 @@ import { RandomLetterService } from "./services/random-letter.service";
 import { GameTimerService } from "./services/game-timer.service";
 import { GameScoreService } from "./services/game-score.service";
 import { HeaderComponent } from "./components/header/header.component";
+import { GameCategoriesService } from "./services/game-categories.service";
+import { GameCategoriesFactory } from "./services/game-categories.factory";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HeaderComponent } from "./components/header/header.component";
   providers: [
     RandomLetterService,
     GameTimerService,
-    GameScoreService
+    GameScoreService,
+    GameCategoriesService,
+    GameCategoriesFactory
   ],
   exports: [
       HeaderComponent

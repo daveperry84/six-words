@@ -4,17 +4,13 @@ import { AppComponent } from './app.component';
 import { RouterModule, Route } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { SetupGameComponent } from './pages/setup-game/setup-game.component';
-import { HeaderComponent } from './shared/components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlayGameComponent } from './pages/play-game/play-game.component';
-import { RandomLetterService } from './shared/services/random-letter.service';
 import { PlayGameFixedFooterComponent } from './components/play-game-fixed-footer/play-game-fixed-footer.component';
 import { GameTimerComponent } from './components/game-timer/game-timer.component';
-import { GameTimerService } from './shared/services/game-timer.service';
 import { ScoreButtonComponent } from './components/score-button/score-button.component';
-import { GameScoreService } from './shared/services/game-score.service';
 import { SharedModule } from './shared/shared.module';
 
 const ROUTES: Route[] = [
