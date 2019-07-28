@@ -6,7 +6,7 @@ export interface IGameTimer {
 }
 
 export class GameTimerService {
-  private _gameTimerSubject: BehaviorSubject<IGameTimer> = new BehaviorSubject<IGameTimer>({ minutes: 0, seconds: 10 });
+  private _gameTimerSubject: BehaviorSubject<IGameTimer> = new BehaviorSubject<IGameTimer>({ minutes: 3, seconds: 0 });
   private _gameStartedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private _gameEndedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private _timer: any;
