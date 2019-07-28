@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GameTimerService, IGameTimer } from 'src/app/services/game-timer.service';
+import { GameTimerService } from 'src/app/shared/services/game-timer.service';
+import { IGameTimer } from 'src/app/shared/types/game-timer.interface';
 
 @Component({
   selector: 'game-timer',

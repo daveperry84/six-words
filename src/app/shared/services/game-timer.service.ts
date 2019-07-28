@@ -1,9 +1,5 @@
 import { Observable, BehaviorSubject } from "rxjs";
-
-export interface IGameTimer {
-    minutes: number;
-    seconds: number;
-}
+import { IGameTimer } from "../types/game-timer.interface";
 
 export class GameTimerService {
   private _gameTimerSubject: BehaviorSubject<IGameTimer> = new BehaviorSubject<IGameTimer>({ minutes: 3, seconds: 0 });

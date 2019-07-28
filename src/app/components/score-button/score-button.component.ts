@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ICategoryField } from 'src/app/pages/play-game/play-game.component';
+import { ICategoryField } from 'src/app/shared/types/category-field.interface';
 
 @Component({
   selector: 'score-button',

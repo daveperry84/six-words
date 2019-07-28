@@ -2,7 +2,7 @@
     'btn-success': control.score === 10,
     'btn-secondary': control.score !== 0 && control.score !== 10,
     'btn-danger': control.score === 0
- }" (click)="setScoreForField(control)">
+ }" (click)="setScoreForField(control)" [disabled]="!control.valid">
     <i class="fas" [ngClass]="{ 
         'fa-trophy': control.score === 10,
         'fa-user': control.score === 5,
