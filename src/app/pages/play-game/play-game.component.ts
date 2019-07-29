@@ -54,7 +54,9 @@ export class PlayGameComponent implements OnInit {
 
       this._gameTimerService.gameEnded().subscribe((gameEnded) => {
         this.gameEnded = gameEnded;
-        this.validateAnswersAndCalculate();
+        if(gameEnded) {
+          this.validateAnswersAndCalculate();
+        }
       });
 
       this._gameScoreService.getTotalScore().subscribe((score) => this.totalScore = score);
@@ -62,7 +64,7 @@ export class PlayGameComponent implements OnInit {
 
     public validateAnswersAndCalculate(): void {
       this.formControls.forEach((control) => {
-        const answer = control.field.value.trim().toLowerCase();        
+        const answer = control.field.value.trim().toLowerCase();
 
         if(!(answer && answer.charAt(0) === this._randomLetter.toLowerCase())) {
           control.score = 0;
