@@ -3,7 +3,7 @@ export class RandomLetterService {
   'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
   'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-  getRandomLetter() {
+  generateRandomLetter() {
     return this._letters[Math.floor(Math.random() * 26)];
   }
 }

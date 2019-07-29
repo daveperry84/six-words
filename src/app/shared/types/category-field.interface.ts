@@ -1,7 +1,7 @@
 import { FormControl } from "@angular/forms";
 
 export interface ICategoryField {
-    id: string;
+    id: number;
     title: string;
     field: FormControl;
     score: number;

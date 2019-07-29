@@ -5,22 +5,24 @@ import { CATEGORIES } from "../data/game-categories";
 export class GameCategoriesService {
     private _categories: Array<ICategory> = CATEGORIES;
 
-    public getRandomCategories(): Observable<Array<ICategory>> {
-        let indexList = [];
-        let categories = [];
+    public generateRandomCategories(): Array<number> {
+        let idList = [];
 
-        while (indexList.length < 6) {
+        while (idList.length < 6) {
             const index = Math.floor(Math.random() * this._categories.length);
+            const id = this._categories[index].id;
 
-            if(indexList.indexOf(index) === -1) {
-                indexList = [...indexList, index];
+            if(idList.indexOf(id) === -1) {
+                idList = [...idList, id];
             }
         }
 
-        indexList.forEach((index) => {
-            categories = [...categories, this._categories[index]];
-        })
+        return idList
+    }
 
-        return of(categories);
+    public getCategoryById(id: number): ICategory {
+        return this._categories.find((category) => {
+            return category.id === id;
+        })
     }
 }

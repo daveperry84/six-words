@@ -6,6 +6,7 @@ import { GameTimerService } from "./services/game-timer.service";
 import { GameScoreService } from "./services/game-score.service";
 import { HeaderComponent } from "./components/header/header.component";
 import { GameCategoriesService } from "./services/game-categories.service";
+import { SetupGameService } from "./services/setup-game.service";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GameCategoriesService } from "./services/game-categories.service";
     RandomLetterService,
     GameTimerService,
     GameScoreService,
-    GameCategoriesService
+    GameCategoriesService,
+    SetupGameService
   ],
   exports: [
       HeaderComponent
