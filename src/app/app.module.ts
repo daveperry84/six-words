@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { RouterModule, Route } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { SetupGameComponent } from './pages/setup-game/setup-game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,12 +12,7 @@ import { PlayGameFixedFooterComponent } from './components/play-game-fixed-foote
 import { GameTimerComponent } from './components/game-timer/game-timer.component';
 import { ScoreButtonComponent } from './components/score-button/score-button.component';
 import { SharedModule } from './shared/shared.module';
-
-const ROUTES: Route[] = [
-  { path: '', component: HomeComponent },
-  { path: 'setup', component: SetupGameComponent },
-  { path: 'play', component: PlayGameComponent }
-];
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -31,7 +26,7 @@ const ROUTES: Route[] = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES),
+    RouterModule.forRoot(APP_ROUTES),
     BrowserAnimationsModule,
     MatInputModule,
     ReactiveFormsModule,

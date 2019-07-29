@@ -9,16 +9,16 @@ import { Router } from '@angular/router';
 export class HomeComponent {
     private _router: Router;
 
-    constructor(router:Router) {
+    constructor(router:Router, ) {
       this._router = router;
     }
 
     public setupNewGame = (): void => {
-        this._router.navigate(['setup']);
+      this._router.navigate(['setup']);
     }
 
     public randomiseGame = (): void => {
       // Randomise game logic here.
       this._router.navigate(['play']);
-  }
+    }
 }

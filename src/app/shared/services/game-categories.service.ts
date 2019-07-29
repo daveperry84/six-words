@@ -1,13 +1,9 @@
 import { ICategory } from "../types/category.interface";
 import { of, Observable } from "rxjs";
-import { GameCategoriesFactory } from "./game-categories.factory";
+import { CATEGORIES } from "../data/game-categories";
 
 export class GameCategoriesService {
-    private _categories: Array<ICategory>;
-
-    constructor(gameCategoriesFactory: GameCategoriesFactory) {
-        this._categories = gameCategoriesFactory.categories;
-    }
+    private _categories: Array<ICategory> = CATEGORIES;
 
     public getRandomCategories(): Observable<Array<ICategory>> {
         let indexList = [];
