@@ -26,7 +26,7 @@
                 <div class="d-flex flex-row justify-content-between mb-2" *ngFor="let control of formControls">
                     <div class="game-answers">
                         <p class="category-title font-weight-bold mb-2">{{control.title}}</p>
-                        <h5 class="category-answer mb-1">{{control.field.value || 'No answer provided!!'}}</h5>
+                        <p class="category-answer mb-1">{{control.field.value || 'No answer provided!!'}}</p>
                     </div>
                     <score-button [control]="control" (calculateScore)="calculateScore()"></score-button>
                 </div>

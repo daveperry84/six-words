@@ -7,12 +7,14 @@ import { GameScoreService } from "./services/game-score.service";
 import { HeaderComponent } from "./components/header/header.component";
 import { GameCategoriesService } from "./services/game-categories.service";
 import { SetupGameService } from "./services/setup-game.service";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
     HeaderComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     BrowserAnimationsModule
   ],
