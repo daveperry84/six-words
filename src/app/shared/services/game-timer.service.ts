@@ -41,6 +41,12 @@ export class GameTimerService {
     }, 1000)
   }
 
+  public resetTimer(): void {
+    this._gameStartedSubject.next(false);
+    this._gameEndedSubject.next(false);
+    this._gameTimerSubject.next({ minutes: 3, seconds: 0 });
+  }
+
   private endTimer(): void {
     clearInterval(this._timer);
     this._gameEndedSubject.next(true);

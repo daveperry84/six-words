@@ -16,6 +16,12 @@ h1, h2 {
     background: $primary;
     border-color: $primary;
 
+    &:disabled {
+        color: $black;
+        background: $primary;
+        border-color: $primary;
+    }
+
     &:hover {
         color: $white;
         background: darken($primary, 7%);

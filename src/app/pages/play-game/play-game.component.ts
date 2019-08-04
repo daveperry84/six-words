@@ -4,7 +4,7 @@ import { GameTimerService } from 'src/app/shared/services/game-timer.service';
 import { GameScoreService } from 'src/app/shared/services/game-score.service';
 import { ICategoryField } from 'src/app/shared/types/category-field.interface';
 import { ICategory } from 'src/app/shared/types/category.interface';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SetupGameService } from 'src/app/shared/services/setup-game.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class PlayGameComponent implements OnInit {
     private _gameScoreService: GameScoreService;
     private _setupGameService: SetupGameService;
     private _route: ActivatedRoute;
+    private _router: Router;
     private _randomLetter: string;
 
     public formControls: Array<ICategoryField> = [];
@@ -28,11 +29,13 @@ export class PlayGameComponent implements OnInit {
     constructor(gameTimerService: GameTimerService, 
       gameScoreService: GameScoreService,
       setupGameService: SetupGameService,
-      activatedRoute: ActivatedRoute) {
+      activatedRoute: ActivatedRoute,
+      router:Router) {
         this._gameTimerService = gameTimerService;
         this._gameScoreService = gameScoreService;
         this._setupGameService = setupGameService;
         this._route = activatedRoute;
+        this._router = router;
     }
 
     ngOnInit(): void {
@@ -79,7 +82,17 @@ export class PlayGameComponent implements OnInit {
       this._gameScoreService.calculateTotalScore(this.formControls);
     }
 
+    public randomiseNewGame = (): void => {
+      // Randomise game logic here.
+      this._setupGameService.generateRandomGameId().subscribe((gameId) => {
+        this.resetGame();
+        this._router.navigate(['play'], { queryParams: { gameId: gameId }});
+      })
+    }
+
     private generateFormControls(categories: Array<ICategory>): void {
+      this.formControls = [];
+
       categories.forEach(category => {
         let field = {
           id: category.id,
@@ -93,4 +106,8 @@ export class PlayGameComponent implements OnInit {
       });
     }
 
+    private resetGame(): void {
+      this._gameTimerService.resetTimer();
+      this.gameLetter = '?';
+    }
 }

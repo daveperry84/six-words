@@ -16,7 +16,7 @@ export class SetupGameService {
         const categories = this._gameCategoriesService.generateRandomCategories().join();
         const letter = this._randomLetterService.generateRandomLetter();
 
-        const gameId = btoa(`${letter}-${categories}`)
+        const gameId = btoa(`${letter}-${categories}`);
 
         return of(gameId);
     }
