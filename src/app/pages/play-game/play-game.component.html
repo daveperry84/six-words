@@ -1,13 +1,25 @@
 <div class="play-container container my-3 overflow-auto">
-    <div class="d-flex align-items-center justify-content-between">
+    <div class="d-flex justify-content-between">
         <div class="d-flex flex-column">
             <h3 class="h2">Play Game</h3>
             <h5 class="play-subtitle">Choose words to fit the following categories.</h5>
         </div>
-        <button class="btn btn-primary ml-3" (click)="randomiseNewGame()" [disabled]="gameStarted && !gameEnded">
-            <i class="fas fa-gamepad pr-0 pr-md-1"></i> 
-            <span class="d-none d-md-inline">New Game</span>
-        </button>
+        <div class="dropdown">
+            <button class="btn btn-primary game-settings-btn ml-3 dropdown-toggle" 
+                    type="button" 
+                    id="dropdownMenuButton" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false"
+                    [disabled]="gameStarted && !gameEnded">
+                <i class="fas fa-cog pr-0 pr-md-1 d-inline d-md-none dd-btn-content"></i>
+                <span class="d-none d-md-inline dd-btn-content">Game Settings</span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item pt-2" (click)="setupNewGame()">Setup New Game</a>
+                <a class="dropdown-item pt-2" (click)="randomiseNewGame()">Randomise Game</a>
+            </div>
+        </div>
     </div>
 
     <div class="card mt-3">

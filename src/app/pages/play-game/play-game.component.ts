@@ -82,12 +82,16 @@ export class PlayGameComponent implements OnInit {
       this._gameScoreService.calculateTotalScore(this.formControls);
     }
 
-    public randomiseNewGame = (): void => {
+    public randomiseNewGame(): void {
       // Randomise game logic here.
       this._setupGameService.generateRandomGameId().subscribe((gameId) => {
         this.resetGame();
         this._router.navigate(['play'], { queryParams: { gameId: gameId }});
       })
+    }
+
+    public setupNewGame(): void {
+      this._router.navigate(['setup']);
     }
 
     private generateFormControls(categories: Array<ICategory>): void {

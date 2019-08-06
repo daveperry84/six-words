@@ -1,0 +1,45 @@
+.btn-primary {
+    color: $black;
+    background: $primary;
+    border-color: $primary;
+
+    &:disabled {
+        color: $black;
+        background: $primary;
+        border-color: $primary;
+    }
+
+    &:hover,
+    &:not(:disabled):not(.disabled):active, 
+    &:not(:disabled):not(.disabled).active {
+        color: $white;
+        background: darken($primary, 7%);
+        border-color: darken($primary, 7%);
+    }
+
+    &:focus,
+    &:active,
+    &:active:focus {
+        box-shadow: none;
+    }
+}
+
+.btn-secondary {
+    color: $black;
+    background: $secondary;
+    border-color: $secondary;
+
+    &:hover,
+    &:not(:disabled):not(.disabled):active, 
+    &:not(:disabled):not(.disabled).active {
+        color: $black;
+        background: darken($secondary, 10%);
+        border-color: darken($secondary, 10%);
+    }
+
+    &:focus,
+    &:active,
+    &:active:focus {
+        box-shadow: none;
+    }
+}

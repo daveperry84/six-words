@@ -1,6 +1,8 @@
 @import './variables';
 @import './mixins';
 @import './width';
+@import './buttons';
+@import './dropdown';
 
 * {
     font-family: $font-general;
@@ -9,36 +11,6 @@
 
 h1, h2 {
     font-family: $font-brand;
-}
-
-.btn-primary {
-    color: $black;
-    background: $primary;
-    border-color: $primary;
-
-    &:disabled {
-        color: $black;
-        background: $primary;
-        border-color: $primary;
-    }
-
-    &:hover {
-        color: $white;
-        background: darken($primary, 7%);
-        border-color: darken($primary, 7%);
-    }
-}
-
-.btn-secondary {
-    color: $black;
-    background: $secondary;
-    border-color: $secondary;
-
-    &:hover {
-        color: $black;
-        background: darken($secondary, 10%);
-        border-color: darken($secondary, 10%);
-    }
 }
 
 html, body { height: 100%; }
