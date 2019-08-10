@@ -18,12 +18,13 @@
         <div class="d-flex justify-content-around flex-wrap card-body">
             <button mat-raised-button 
                     type="button" 
-                    class="btn category-btn m-3" 
+                    class="btn category-btn m-2 my-md-3 mx-md-2" 
                     *ngFor="let category of categories"
                     [ngClass]="{ 'btn-primary': category.selected, 'btn-secondary': !category.selected }"
                     [disabled]="selectedCategoryCount === 6 && !category.selected"
                     (click)="selectCategory(category)">
-                {{category.title}}
+                    <i class="{{category.icon}} fa-fw mr-md-1"></i>
+                    <span class="d-none d-md-inline">{{category.title}}</span>
             </button>
         </div>
     </div>

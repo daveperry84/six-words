@@ -13,5 +13,19 @@
     .category-btn {
         width: 210px;
         height: 64px;
+
+        .fas,
+        .far {
+            font-size: 22px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 75px;
+
+            .fas,
+            .far {
+                font-size: 30px;
+            }
+        }
     }
 }
