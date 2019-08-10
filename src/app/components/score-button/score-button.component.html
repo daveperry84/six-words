@@ -1,4 +1,4 @@
-<button class="btn score-btn" [ngClass]="{ 
+<button mat-raised-button class="btn score-btn" [ngClass]="{ 
     'btn-success': control.score === 10,
     'btn-secondary': control.score !== 0 && control.score !== 10,
     'btn-danger': control.score === 0

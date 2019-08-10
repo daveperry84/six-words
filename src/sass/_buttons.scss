@@ -12,9 +12,8 @@
     &:hover,
     &:not(:disabled):not(.disabled):active, 
     &:not(:disabled):not(.disabled).active {
-        color: $white;
-        background: darken($primary, 7%);
-        border-color: darken($primary, 7%);
+        background: lighten($primary, 10%);
+        border-color: lighten($primary, 10%);
     }
 
     &:focus,
@@ -41,5 +40,13 @@
     &:active,
     &:active:focus {
         box-shadow: none;
+    }
+}
+
+.btn-dark {
+    color: $white;
+
+    span {
+        color: $white;
     }
 }

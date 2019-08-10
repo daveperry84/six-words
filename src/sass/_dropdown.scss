@@ -1,19 +1,7 @@
 .dropdown {
-    .btn-primary {
-        &:hover {
-            i, span, p {
-                color: $white;
-            }
-        }
-    }
-
     &.show > .btn-primary {
-        background: darken($primary, 7%);
-        border-color: darken($primary, 7%);
-
-        i, span, p {
-            color: $white;
-        }
+        background: lighten($primary, 10%);
+        border-color: lighten($primary, 10%);
 
         &:focus,
         &:active,

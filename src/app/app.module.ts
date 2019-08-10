@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SetupGameComponent } from './pages/setup-game/setup-game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlayGameComponent } from './pages/play-game/play-game.component';
 import { PlayGameFixedFooterComponent } from './components/play-game-fixed-footer/play-game-fixed-footer.component';
@@ -29,6 +30,7 @@ import { APP_ROUTES } from './app.routes';
     RouterModule.forRoot(APP_ROUTES),
     BrowserAnimationsModule,
     MatInputModule,
+    MatButtonModule,
     ReactiveFormsModule,
     SharedModule
   ],
