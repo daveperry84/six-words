@@ -83,9 +83,8 @@ export class PlayGameComponent implements OnInit {
     }
 
     public randomiseNewGame(): void {
-      // Randomise game logic here.
       this._setupGameService.generateRandomGameId().subscribe((gameId) => {
-        this.resetGame();
+        this.gameLetter = '?';
         this._router.navigate(['play'], { queryParams: { gameId: gameId }});
       })
     }
@@ -108,10 +107,5 @@ export class PlayGameComponent implements OnInit {
 
         this.formControls = [...this.formControls, field];
       });
-    }
-
-    private resetGame(): void {
-      this._gameTimerService.resetTimer();
-      this.gameLetter = '?';
     }
 }

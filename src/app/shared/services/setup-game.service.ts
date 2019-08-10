@@ -2,14 +2,19 @@ import { of, Observable } from "rxjs";
 import { GameCategoriesService } from "./game-categories.service";
 import { RandomLetterService } from "./random-letter.service";
 import { IGame } from "../types/game.interface";
+import { GameTimerService } from "./game-timer.service";
 
 export class SetupGameService {
     private _gameCategoriesService: any;
     private _randomLetterService: RandomLetterService;
+    private _gameTimerService: GameTimerService;
 
-    constructor(gameCategoriesService: GameCategoriesService, randomLetterService: RandomLetterService) {
+    constructor(gameCategoriesService: GameCategoriesService, 
+        randomLetterService: RandomLetterService,
+        gameTimerService: GameTimerService) {
         this._gameCategoriesService = gameCategoriesService;
         this._randomLetterService = randomLetterService;
+        this._gameTimerService = gameTimerService;
     }
 
     public generateRandomGameId(): Observable<string> {
@@ -17,6 +22,8 @@ export class SetupGameService {
         const letter = this._randomLetterService.generateRandomLetter();
 
         const gameId = btoa(`${letter}-${categories}`);
+
+        this._gameTimerService.resetTimer();
 
         return of(gameId);
     }
