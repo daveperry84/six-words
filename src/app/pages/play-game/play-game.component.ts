@@ -83,7 +83,7 @@ export class PlayGameComponent implements OnInit {
     }
 
     public randomiseNewGame(): void {
-      this._setupGameService.generateRandomGameId().subscribe((gameId) => {
+      this._setupGameService.generateGameId().subscribe((gameId) => {
         this.gameLetter = '?';
         this._router.navigate(['play'], { queryParams: { gameId: gameId }});
       })

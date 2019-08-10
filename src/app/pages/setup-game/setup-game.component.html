@@ -1,3 +1,30 @@
-<div class="container mt-3">
-    <h3 class="h2">Setup New Game...</h3>
+<div class="setup-container container mt-3">
+    <div class="d-flex flex-column">
+        <h3 class="h2">Setup New Game</h3>
+        <h5 class="setup-subtitle">Customise your game by selecting the categories you play</h5>
+    </div>
+
+    <div class="card my-3">
+        <div class="bg-light mx-3 mt-3 p-3 d-flex justify-content-between align-items-center">
+            <h5 class="mb-0" [ngClass]="{ 'font-weight-bold': selectedCategoryCount === 6 }">{{selectedCategoryCount}} Categories Selected</h5>  
+            <button mat-raised-button 
+                    type="button" 
+                    class="btn btn-primary"
+                    [disabled]="selectedCategoryCount !== 6"
+                    (click)="playGameWithSetup()">
+                Play Game
+            </button>
+        </div>
+        <div class="d-flex justify-content-around flex-wrap card-body">
+            <button mat-raised-button 
+                    type="button" 
+                    class="btn category-btn m-3" 
+                    *ngFor="let category of categories"
+                    [ngClass]="{ 'btn-primary': category.selected, 'btn-secondary': !category.selected }"
+                    [disabled]="selectedCategoryCount === 6 && !category.selected"
+                    (click)="selectCategory(category)">
+                {{category.title}}
+            </button>
+        </div>
+    </div>
 </div>

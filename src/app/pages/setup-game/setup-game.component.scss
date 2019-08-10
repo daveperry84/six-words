@@ -1,0 +1,17 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "./../../../sass/variables";
+
+.setup-container {
+    @include media-breakpoint-down(sm) {
+        .setup-subtitle {
+            font-size: 16px;
+        }
+    }
+
+    .category-btn {
+        width: 210px;
+        height: 64px;
+    }
+}

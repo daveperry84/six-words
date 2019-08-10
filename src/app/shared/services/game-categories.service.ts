@@ -5,6 +5,10 @@ import { CATEGORIES } from "../data/game-categories";
 export class GameCategoriesService {
     private _categories: Array<ICategory> = CATEGORIES;
 
+    public getCategories(): Array<ICategory> {
+        return this._categories;
+    }
+
     public generateRandomCategories(): Array<number> {
         let idList = [];
 

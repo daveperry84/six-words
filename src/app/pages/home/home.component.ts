@@ -22,7 +22,7 @@ export class HomeComponent {
 
     public randomiseGame = (): void => {
       // Randomise game logic here.
-      this._setupGameService.generateRandomGameId().subscribe((gameId) => {        
+      this._setupGameService.generateGameId().subscribe((gameId) => {        
         this._router.navigate(['play'], { queryParams: { gameId: gameId }});
       })
     }

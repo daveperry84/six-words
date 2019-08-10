@@ -17,8 +17,8 @@ export class SetupGameService {
         this._gameTimerService = gameTimerService;
     }
 
-    public generateRandomGameId(): Observable<string> {
-        const categories = this._gameCategoriesService.generateRandomCategories().join();
+    public generateGameId(categoryList: Array<number> = null): Observable<string> {
+        const categories = categoryList ? categoryList : this._gameCategoriesService.generateRandomCategories().join();
         const letter = this._randomLetterService.generateRandomLetter();
 
         const gameId = btoa(`${letter}-${categories}`);
