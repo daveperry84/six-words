@@ -43,10 +43,7 @@
     }
 }
 
-.btn-dark {
+.btn-dark,
+.btn-dark * {
     color: $white;
-
-    span {
-        color: $white;
-    }
 }
