@@ -5,7 +5,7 @@
     </div>
 
     <div class="card my-3">
-        <div class="bg-light mx-3 mt-3 p-3 d-flex justify-content-between align-items-center">
+        <div class="bg-light mx-3 mt-3 p-3 d-none d-md-flex justify-content-between align-items-center">
             <h5 class="mb-0" [ngClass]="{ 'font-weight-bold': selectedCategoryCount === 6 }">{{selectedCategoryCount}} Categories Selected</h5>  
             <button mat-raised-button 
                     type="button" 
@@ -29,3 +29,16 @@
         </div>
     </div>
 </div>
+
+<fixed-footer>
+    <div class="d-flex justify-content-between align-items-center h-100">
+        <p class="mb-0" [ngClass]="{ 'font-weight-bold': selectedCategoryCount === 6 }">{{selectedCategoryCount}} Selected</p>  
+        <button mat-raised-button 
+                type="button" 
+                class="btn btn-dark ml-3"
+                [disabled]="selectedCategoryCount !== 6"
+                (click)="playGameWithSetup()">
+                <i class="fas fa-play-circle fa-fw pr-1"></i>Play
+        </button>
+    </div>
+</fixed-footer>

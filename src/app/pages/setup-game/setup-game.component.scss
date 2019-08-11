@@ -5,6 +5,8 @@
 
 .setup-container {
     @include media-breakpoint-down(sm) {
+        margin-bottom: 100px !important;
+        
         .setup-subtitle {
             font-size: 16px;
         }
