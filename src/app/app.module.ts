@@ -9,11 +9,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlayGameComponent } from './pages/play-game/play-game.component';
-import { PlayGameFixedFooterComponent } from './components/play-game-fixed-footer/play-game-fixed-footer.component';
+import { FixedFooterComponent } from './components/fixed-footer/fixed-footer.component';
 import { GameTimerComponent } from './components/game-timer/game-timer.component';
 import { ScoreButtonComponent } from './components/score-button/score-button.component';
-import { SharedModule } from './shared/shared.module';
 import { APP_ROUTES } from './app.routes';
+import { RandomLetterService } from './services/random-letter.service';
+import { GameTimerService } from './services/game-timer.service';
+import { GameScoreService } from './services/game-score.service';
+import { GameCategoriesService } from './services/game-categories.service';
+import { SetupGameService } from './services/setup-game.service';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +26,10 @@ import { APP_ROUTES } from './app.routes';
     HomeComponent,
     SetupGameComponent,
     PlayGameComponent,
-    PlayGameFixedFooterComponent,
+    FixedFooterComponent,
     GameTimerComponent,
-    ScoreButtonComponent
+    ScoreButtonComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -31,10 +37,15 @@ import { APP_ROUTES } from './app.routes';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule,
-    SharedModule
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    RandomLetterService,
+    GameTimerService,
+    GameScoreService,
+    GameCategoriesService,
+    SetupGameService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

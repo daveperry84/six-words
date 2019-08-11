@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GameCategoriesService } from 'src/app/shared/services/game-categories.service';
-import { ICategory } from 'src/app/shared/types/category.interface';
-import { SetupGameService } from 'src/app/shared/services/setup-game.service';
+import { GameCategoriesService } from 'src/app/services/game-categories.service';
+import { ICategory } from 'src/app/types/category.interface';
+import { SetupGameService } from 'src/app/services/setup-game.service';
 import { Router } from '@angular/router';
 
 @Component({

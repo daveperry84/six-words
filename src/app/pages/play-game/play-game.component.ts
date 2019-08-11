@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { GameTimerService } from 'src/app/shared/services/game-timer.service';
-import { GameScoreService } from 'src/app/shared/services/game-score.service';
-import { ICategoryField } from 'src/app/shared/types/category-field.interface';
-import { ICategory } from 'src/app/shared/types/category.interface';
+import { GameTimerService } from 'src/app/services/game-timer.service';
+import { GameScoreService } from 'src/app/services/game-score.service';
+import { ICategoryField } from 'src/app/types/category-field.interface';
+import { ICategory } from 'src/app/types/category.interface';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SetupGameService } from 'src/app/shared/services/setup-game.service';
+import { SetupGameService } from 'src/app/services/setup-game.service';
 
 @Component({
   selector: 'app-play-game',

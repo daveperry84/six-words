@@ -59,4 +59,15 @@
         </div>
     </div>
 </div>
-<play-game-fixed-footer [letter]="gameLetter" [totalScore]="totalScore"></play-game-fixed-footer>
+<fixed-footer>
+    <div class="d-flex justify-content-between align-items-center h-100">
+        <div class="footer-letter px-2 pt-2 d-flex justify-content-center align-items-center">
+            <h3 class="random-letter">{{gameLetter}}</h3>
+        </div>
+        <game-timer *ngIf="!gameEnded"></game-timer>
+        <div class="d-flex flex-column align-items-center" *ngIf="gameEnded">
+            <p class="mb-0">Total Score</p>
+            <h3 class="mb-0">{{totalScore}}</h3>
+        </div>
+    </div>
+</fixed-footer>

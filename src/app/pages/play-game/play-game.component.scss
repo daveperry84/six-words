@@ -68,3 +68,15 @@
         }
     }
 }
+
+.footer-letter {
+    border: 2px solid $black;
+    border-radius: 5px;
+    width: 68px;
+    height: 64px;
+
+    .random-letter {
+        font-size: 50px;
+        font-weight: bold;
+    }
+}
