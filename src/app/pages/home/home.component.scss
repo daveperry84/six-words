@@ -48,3 +48,15 @@
         width: 175px;
     }
 }
+
+.home-section {
+    min-height: 200px;
+
+    &-even {
+        background-color: #E1E1E1;
+    }
+    
+    .section-content {
+        min-height: 200px;
+    }
+}
