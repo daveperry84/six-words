@@ -1,6 +1,8 @@
 import { BehaviorSubject, Observable } from "rxjs";
 import { ICategoryField } from "../types/category-field.interface";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class GameScoreService {
     private _totalScoreSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
