@@ -1,7 +1,9 @@
 import { ICategory } from "../types/category.interface";
 import { of, Observable } from "rxjs";
 import { CATEGORIES } from "../data/game-categories";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class GameCategoriesService {
     private _categories: Array<ICategory> = CATEGORIES;
 
