@@ -20,9 +20,7 @@ export class GameTimerComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this._gameTimerService.getTime().subscribe((timer) => {
-      console.log(timer);
-      
+    this._gameTimerService.getTime().subscribe((timer) => {      
       this.gameTimer = timer;
     });
 
