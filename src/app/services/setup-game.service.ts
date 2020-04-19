@@ -1,14 +1,16 @@
 import { of, Observable } from "rxjs";
-import { GameCategoriesService } from "./game-categories.service";
-import { RandomLetterService } from "./random-letter.service";
 import { IGame } from "../types/game.interface";
 import { GameTimerService } from "./game-timer.service";
+import { RandomLetterService } from "./random-letter.service";
+import { GameCategoriesService } from "./game-categories.service";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class SetupGameService {
     private _gameCategoriesService: any;
     private _randomLetterService: RandomLetterService;
     private _gameTimerService: GameTimerService;
-
+    
     constructor(gameCategoriesService: GameCategoriesService, 
         randomLetterService: RandomLetterService,
         gameTimerService: GameTimerService) {
