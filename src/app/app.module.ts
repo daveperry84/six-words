@@ -33,7 +33,7 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(APP_ROUTES),
+    RouterModule.forRoot(APP_ROUTES, { relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
