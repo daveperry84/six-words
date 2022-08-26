@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { GameTimerService } from 'src/app/services/game-timer.service';
 import { GameScoreService } from 'src/app/services/game-score.service';
 import { ICategoryField } from 'src/app/types/category-field.interface';
@@ -100,7 +100,7 @@ export class PlayGameComponent implements OnInit {
         let field = {
           id: category.id,
           title: category.title,
-          field: new FormControl(''),
+          field: new UntypedFormControl(''),
           score: 10,
           valid: true
         }
