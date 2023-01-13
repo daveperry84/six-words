@@ -1,10 +1,12 @@
+@import "./../../../sass/variables";
+
 .header-nav {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     height: 60px;
-    background: #ffc107;
+    background: $primary;
 
     a {
         text-decoration: none;

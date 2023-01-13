@@ -1,39 +1,41 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "./../../../sass/variables";
 
 .home-banner {
-    background-image: url('./../../../assets/images/dawid-zawila-fiu89zdeTQI-unsplash.jpg');
-    height: 365px;
+    background-image: url('./../../../assets/images/jumbled-letter.jpg');
+    height: calc(100vh - 160px);
     background-repeat: no-repeat;
     background-size: cover;
-
-    @include media-breakpoint-up(md) {
-        background-position-y: -50px;
-    }
-
-    @include media-breakpoint-up(lg) {
-        background-position-y: -90px;
-    }
-
-    @include media-breakpoint-up(xl) {
-        background-position-y: -150px;
-    }
 }
 
 .banner-overlay {
-    background-color:rgba(0,0,0,0.4);
+    background-color:rgba(74,203,255,0.7);
     width: inherit;
     height: inherit;
-    color: #eee;
+    color: $black;
     text-align: center;
 
     h1 {
-        font-size: 50px;
+        font-size: 55px;
+        // background-image: url('./../../../assets/images/jumbled-letter.jpg');
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
 
         @include media-breakpoint-up(sm) {
-            font-size: 70px;
-        }        
+            font-size: 80px;
+        }  
+
+        @include media-breakpoint-up(md) {
+            font-size: 100px;
+        } 
+        
+        @include media-breakpoint-up(lg) {
+            font-size: 130px;
+        }  
     }
 
     h5 {
@@ -45,7 +47,18 @@
     }
 
     .btn {
-        width: 175px;
+        width: 300px;
+        padding: 16px;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        box-shadow: 4px 5px 5px 3px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+        
+        @include media-breakpoint-up(md) {
+            width: 400px;
+            padding: 20px;
+            font-size: 25px;
+        }  
     }
 }
 
