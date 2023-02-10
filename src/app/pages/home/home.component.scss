@@ -4,92 +4,103 @@
 @import "./../../../sass/variables";
 
 .home-banner {
-    background-image: url('./../../../assets/images/jumbled-letter-greyscale.jpg');
+    background-image: url('./../../../assets/images/jumbled-letter.jpg');
     height: calc(100vh - 160px);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .banner-overlay {
-    background-color:rgba(255,255,255,0.5);
+    background-color:rgba(255,255,255,0.3);
     width: inherit;
     height: inherit;
-    color: $black;
     text-align: center;
 
-    .title-container {
-        position: relative;
-    }
-
-    .title,
-    .title-shadow {
-        font-size: 80px;
+    .banner-content {
+        background-color: $tertiary;
+        padding: 0 20px 30px 20px;
+        box-shadow: 10px 10px $black;
+        border-radius: 4px;
 
         @include media-breakpoint-up(sm) {
-            font-size: 105px;
+            padding: 0 40px 30px 40px;
         }  
-
-        @include media-breakpoint-up(md) {
-            font-size: 130px;
-        } 
-        
-        @include media-breakpoint-up(lg) {
-            font-size: 170px;
-        }  
+    
+        .title {
+            font-size: 60px;
+            color: $primary;
+            text-shadow: 5px 5px $black;
+    
+            @include media-breakpoint-up(sm) {
+                font-size: 105px;
+                text-shadow: 7px 7px $black;
+            }  
+    
+            @include media-breakpoint-up(md) {
+                font-size: 130px;
+                text-shadow: 8px 8px $black;
+            } 
+            
+            @include media-breakpoint-up(lg) {
+                font-size: 170px;
+                text-shadow: 9px 9px $black;
+            } 
+        }
+    
+        h5 {
+            font-size: 16px;
+    
+            @include media-breakpoint-up(md) {
+                font-size: 20px;
+            }
+        }
+    
+        .btn {
+            width: 240px;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 8px 8px $black;
+            
+            @include media-breakpoint-up(md) {
+                width: 400px;
+                padding: 20px;
+                font-size: 25px;
+            }  
+        }
     }
+}
 
-    .title {
-        color: $primary;
-        position: absolute;
+.scroll-to-rules {
+    background-color: $tertiary;
+    min-height: 100px;
+
+    h2 {
+        font-size: 70px;
 
         &:hover {
-            background: url('./../../../assets/images/jumbled-letter.jpg');
-            background-repeat: no-repeat;
-            background-size: 115%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: $primary;
         }
-    }
-
-    .title-shadow {
-        margin-left: 5px;
-        margin-top: 10px;
-        color: $black;
-    }
-
-    h5 {
-        font-size: 16px;
-
-        @include media-breakpoint-up(md) {
-            font-size: 20px;
-        }
-    }
-
-    .btn {
-        width: 300px;
-        padding: 16px;
-        font-size: 20px;
-        font-weight: bold;
-        text-transform: uppercase;
-        box-shadow: 4px 5px 5px 3px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-        
-        @include media-breakpoint-up(md) {
-            width: 400px;
-            padding: 20px;
-            font-size: 25px;
-        }  
     }
 }
 
 .home-section {
-    min-height: 200px;
+    min-height: 300px;
 
-    &-even {
-        background-color: #E1E1E1;
+    &-blue {
+        background-color: $primary;
+    }
+
+    &-pink {
+        background-color: $secondary;
+    }
+
+    &-yellow {
+        background-color: $tertiary;
     }
     
     .section-content {
-        min-height: 200px;
+        min-height: 300px;
     }
 }

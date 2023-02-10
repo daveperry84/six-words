@@ -1,43 +1,45 @@
 <div class="home-banner">
-    <div class="banner-overlay d-flex justify-content-center align-items-center flex-column">
-        <div class="title-container">
+    <div class="banner-overlay d-flex justify-content-center align-items-center">
+        <div class="banner-content d-flex flex-column align-items-center">
             <h1 class="title">Sixword</h1>
-            <h1 class="title-shadow">Sixword</h1>
-        </div>
-        <h5 class="w-75 w-lg-50 font-weight-bold">The (un)friendly word game</h5>
-        <div class="d-flex flex-column align-items-center mt-3">
-            <button mat-raised-button type="button" class="btn btn-primary mb-3" (click)="randomiseGame()">Start New Game</button>
-            <button mat-raised-button type="button" class="btn btn-secondary" (click)="setupNewGame()">Customise Game</button>
+            <h5 class="w-75 w-lg-50 font-weight-bold">The (un)friendly word game</h5>
+            <div class="d-flex flex-column align-items-center mt-3">
+                <button mat-raised-button type="button" class="btn btn-primary mb-3" (click)="randomiseGame()">Start New Game</button>
+                <button mat-raised-button type="button" class="btn btn-secondary" (click)="setupNewGame()">Customise Game</button>
+            </div>
         </div>
     </div>
 </div>
-<div class="home-section">
+<div class="scroll-to-rules d-flex justify-content-center align-items-center" (onclick)="scrollToRules()">
+    <h2 class="h1">Game Rules</h2>
+</div>
+<div class="home-section home-section-pink" id="firstRule">
     <div class="container py-3">
         <div class="d-flex flex-column justify-content-around section-content">
             <h3 class="h2 font-weight-bold mb-3">Game Basics</h3>
-            <h5>You will be given 6 categories, i.e. Boys names, movie titles, etc.</h5>
-            <h5>Can you choose 6 answers that all begin with a given letter and fit each category?</h5>
-            <h5>Oh, I almost forgot, you'll be timed too!!</h5>
+            <h4>You will be given 6 categories, i.e. Boys names, movie titles, etc.</h4>
+            <h4>Can you choose 6 answers that all begin with a given letter and fit each category?</h4>
+            <h4>Oh, I almost forgot, you'll be timed too!!</h4>
         </div>
     </div>
 </div>
-<div class="home-section home-section-even">
+<div class="home-section home-section-blue">
     <div class="container py-3">
         <div class="d-flex flex-column justify-content-around section-content align-items-end">
             <h3 class="h2 font-weight-bold mb-3">Customise your game</h3>
-            <h5>You can setup the game how you wish.</h5>
-            <h5>Click 'Setup Game' and choose the categories you would like to play.</h5>
-            <h5>Don't have the time? 'Randomise Game' will select the categories for you.</h5>
+            <h4>You can setup the game how you wish.</h4>
+            <h4>Click 'Setup Game' and choose the categories you would like to play.</h4>
+            <h4>Don't have the time? 'Randomise Game' will select the categories for you.</h4>
         </div>
     </div>
 </div>
-<div class="home-section">
+<div class="home-section home-section-yellow">
     <div class="container py-3">
         <div class="d-flex flex-column justify-content-around section-content">
             <h3 class="h2 font-weight-bold mb-3">Play with friends</h3>
-            <h5>Send your game link to friends and you can play the same game.</h5>
-            <h5>Aim to select answers that your friends will not choose.</h5>
-            <h5>Once the time is up, calculate your score.</h5>
+            <h4>Send your game link to friends and you can play the same game.</h4>
+            <h4>Aim to select answers that your friends will not choose.</h4>
+            <h4>Once the time is up, calculate your score.</h4>
         </div>
     </div>
 </div>

@@ -26,4 +26,9 @@ export class HomeComponent {
         this._router.navigate(['play'], { queryParams: { gameId: gameId }});
       })
     }
+
+    public scrollToRules = (): void => {
+      const element = document.getElementById("firstRule").offsetTop;
+      window.scrollTo({ top: element, behavior: 'smooth' });
+    }
 }
