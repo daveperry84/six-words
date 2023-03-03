@@ -5,33 +5,32 @@
     </div>
 
     <div class="card my-3">
-        <div class="bg-light mx-3 mt-3 p-3 d-none d-md-flex justify-content-between align-items-center">
-            <h5 class="mb-0" [ngClass]="{ 'font-weight-bold': selectedCategoryCount === 6 }">{{selectedCategoryCount}} Categories Selected</h5>  
-            <button mat-raised-button 
-                    type="button" 
-                    class="btn btn-primary"
-                    [disabled]="selectedCategoryCount !== 6"
-                    (click)="playGameWithSetup()">
-                    <i class="fas fa-play-circle fa-fw pr-1"></i>Play Game
-            </button>
+        <div class="selected-categories-bar bg-light mx-3 mt-3 p-3 d-none d-md-flex justify-content-between align-items-center" 
+             *ngIf="selectedCategoryCount < 6">
+            <h5 class="mb-0 font-weight-bold">{{selectedCategoryCount}} Categories Selected</h5>  
+            <h5 class="mb-0">Select {{6-selectedCategoryCount}} more categories</h5>
+        </div>
+        <div class="selected-categories-bar play-now bg-primary mx-3 mt-3 p-3 d-none d-md-flex justify-content-between align-items-center"
+             *ngIf="selectedCategoryCount === 6"
+             (click)="playGameWithSetup()">
+            <h5 class="mb-0 font-weight-bold">{{selectedCategoryCount}} Categories Selected</h5>
+            <h2 class="mb-0">Play Now</h2>
         </div>
         <div class="d-flex justify-content-around flex-wrap card-body">
-            <button mat-raised-button 
-                    type="button" 
-                    class="btn category-btn m-2 my-md-3 mx-md-2" 
-                    *ngFor="let category of categories"
-                    [ngClass]="{ 'btn-primary': category.selected, 'btn-secondary': !category.selected }"
-                    [disabled]="selectedCategoryCount === 6 && !category.selected"
-                    (click)="selectCategory(category)">
-                    <i class="{{category.icon}} fa-fw mr-md-1"></i>
-                    <span class="d-none d-md-inline">{{category.title}}</span>
-            </button>
+            <div class="btn category-btn m-2 my-md-3 mx-md-2 d-flex justify-content-center align-items-center" 
+                *ngFor="let category of categories"
+                [ngClass]="{ 'btn-primary': category.selected, 'btn-grey': !category.selected, 
+                                    'disabled': selectedCategoryCount === 6 && !category.selected }"
+                (click)="selectCategory(category)">
+                <i class="{{category.icon}} fa-fw mr-md-1"></i>
+                <span class="d-none d-md-inline">{{category.title}}</span>
+            </div>
         </div>
     </div>
 </div>
 
 <fixed-footer>
-    <div class="d-flex justify-content-between align-items-center h-100">
+    <!-- <div class="d-flex justify-content-between align-items-center h-100">
         <p class="mb-0" [ngClass]="{ 'font-weight-bold': selectedCategoryCount === 6 }">{{selectedCategoryCount}} Selected</p>  
         <button mat-raised-button 
                 type="button" 
@@ -40,5 +39,16 @@
                 (click)="playGameWithSetup()">
                 <i class="fas fa-play-circle fa-fw pr-1"></i>Play
         </button>
+    </div> -->
+    <div class="selected-categories-bar d-flex justify-content-between align-items-center h-100" 
+        *ngIf="selectedCategoryCount < 6">
+        <p class="mb-0 font-weight-bold">{{selectedCategoryCount}} Categories Selected</p>  
+        <p class="mb-0">Select {{6-selectedCategoryCount}} more categories</p>
+    </div>
+    <div class="selected-categories-bar play-now d-flex justify-content-between align-items-center h-100"
+        *ngIf="selectedCategoryCount === 6"
+        (click)="playGameWithSetup()">
+        <p class="mb-0 font-weight-bold">{{selectedCategoryCount}} Categories Selected</p>
+        <h2 class="mb-0">Play Now</h2>
     </div>
 </fixed-footer>
