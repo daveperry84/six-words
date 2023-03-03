@@ -43,6 +43,26 @@
     }
 }
 
+.btn-grey {
+    color: $black;
+    background: $grey;
+    border-color: $grey;
+
+    &:hover,
+    &:not(:disabled):not(.disabled):active, 
+    &:not(:disabled):not(.disabled).active {
+        color: $black;
+        background: darken($grey, 10%);
+        border-color: darken($grey, 10%);
+    }
+
+    &:focus,
+    &:active,
+    &:active:focus {
+        box-shadow: none;
+    }
+}
+
 .btn-dark,
 .btn-dark * {
     color: $white;

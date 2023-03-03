@@ -1,8 +1,10 @@
-# 6 Words
+# Sixword
+
+## The (un)friendly word game
 
 Choose words that fit 6 different categories...but be sure not to choose the same words as your friends.
 
-An angular 8 application, built with bootstrap 4, SASS and angular material.
+An angular 14 application, built with bootstrap 4, SASS and angular material.
 
 --------------------------------------------------------------------------------------------
 

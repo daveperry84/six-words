@@ -29,5 +29,25 @@
                 font-size: 30px;
             }
         }
+
+        &.disabled {
+            cursor: default;
+        }
+    }
+
+    .selected-categories-bar {
+        height: 72px;
+        border-radius: 5px;
+
+        &.play-now {
+            &:hover {
+                cursor: pointer;
+
+                h2 {
+                    color: $tertiary;
+                    transition: color 0.5s ease-in-out;
+                }
+            }
+        }
     }
 }

@@ -22,7 +22,7 @@
         .letter-panel {
             width: 200px;
             height: 200px;
-            background-color: #ffc107;
+            background-color: $primary;
             border-radius: 10px;
             
             .random-letter {
@@ -53,7 +53,7 @@
             right: 10px;
             width: 70px;
             height: 70px;
-            background-color: #ffc107;
+            background-color: $primary;
             border-radius: 5px;
 
             .random-letter {

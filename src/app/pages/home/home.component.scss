@@ -1,62 +1,147 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "./../../../sass/variables";
 
 .home-banner {
-    background-image: url('./../../../assets/images/dawid-zawila-fiu89zdeTQI-unsplash.jpg');
-    height: 365px;
+    background-image: url('./../../../assets/images/letter-building.jpg');
+    height: calc(100vh - 160px);
     background-repeat: no-repeat;
     background-size: cover;
-
-    @include media-breakpoint-up(md) {
-        background-position-y: -50px;
-    }
-
-    @include media-breakpoint-up(lg) {
-        background-position-y: -90px;
-    }
-
-    @include media-breakpoint-up(xl) {
-        background-position-y: -150px;
-    }
+    background-position: center;
 }
 
 .banner-overlay {
-    background-color:rgba(0,0,0,0.4);
+    background-color:rgba(255,255,255,0.3);
     width: inherit;
     height: inherit;
-    color: #eee;
     text-align: center;
 
-    h1 {
-        font-size: 50px;
+    .title-container {
+        position: relative;
 
-        @include media-breakpoint-up(sm) {
-            font-size: 70px;
-        }        
-    }
+        .title {
+            position: relative;
+            z-index: 1;
+            font-size: 60px;
+            color: $primary;
+            text-shadow: 5px 5px $black;
+    
+            @include media-breakpoint-up(sm) {
+                font-size: 105px;
+                text-shadow: 7px 7px $black;
+            }  
+    
+            @include media-breakpoint-up(md) {
+                font-size: 130px;
+                text-shadow: 8px 8px $black;
+            } 
+            
+            @include media-breakpoint-up(lg) {
+                font-size: 170px;
+                text-shadow: 9px 9px $black;
+            } 
+        }
 
-    h5 {
-        font-size: 16px;
+        .sub-title {
+            position: absolute;
+            right: 14px;
+            bottom: -18px;
+            z-index: 0;
+            padding: 7px 12px;
+            background-color: $tertiary;
+            border: 4px solid $black;
+            border-radius: 10px;
+            font-family: $font-brand;
+            font-size: 9px;
 
-        @include media-breakpoint-up(md) {
-            font-size: 20px;
+            @include media-breakpoint-up(sm) {
+                padding: 8px 14px;
+                font-size: 16px;
+                right: 30px;
+                bottom: -20px;
+            }
+
+            @include media-breakpoint-up(md) {
+                padding: 9px 16px;
+                font-size: 18px;
+                right: 42px;
+                bottom: -20px;
+                border-width: 6px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding: 10px 20px;
+                font-size: 20px;
+                right: 63px;
+                bottom: -18px;
+                border-width: 6px;
+            }
         }
     }
 
     .btn {
-        width: 175px;
+        width: 240px;
+        padding: 14px;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        box-shadow: 8px 8px $black;
+        
+        @include media-breakpoint-up(md) {
+            width: 400px;
+            padding: 20px;
+            font-size: 25px;
+        }  
+    }
+}
+
+.scroll-to-rules {
+    background-color: $tertiary;
+    min-height: 100px;
+
+    h2 {
+        font-size: 40px;
+
+        @include media-breakpoint-up(sm) {
+            font-size: 50px;
+        }  
+
+        @include media-breakpoint-up(md) {
+            font-size: 60px;
+        }  
+
+        @include media-breakpoint-up(lg) {
+            font-size: 70px;
+        }  
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        h2 {
+            color: $primary;
+            transition: color 0.5s ease-in-out;
+        }
     }
 }
 
 .home-section {
-    min-height: 200px;
+    min-height: 300px;
 
-    &-even {
-        background-color: #E1E1E1;
+    &-blue {
+        background-color: $primary;
+    }
+
+    &-pink {
+        background-color: $secondary;
+    }
+
+    &-yellow {
+        background-color: $tertiary;
     }
     
     .section-content {
-        min-height: 200px;
+        min-height: 300px;
     }
 }

@@ -31,8 +31,10 @@ export class SetupGameComponent implements OnInit {
   }
 
   public selectCategory(category: ICategory) {
-    category.selected = !category.selected;
-    this.setSelectedCategoryCount();
+    if(category.selected || (this.selectedCategoryCount < 6 && !category.selected)) {
+      category.selected = !category.selected;
+      this.setSelectedCategoryCount();
+    }
   }
 
   public playGameWithSetup(): void {
