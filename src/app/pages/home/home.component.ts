@@ -29,6 +29,6 @@ export class HomeComponent {
 
     public scrollToRules = (): void => {
       const element = document.getElementById("firstRule").offsetTop;
-      window.scrollTo({ top: element, behavior: 'smooth' });
+      window.scrollTo({ top: element - 60, behavior: 'smooth' });
     }
 }

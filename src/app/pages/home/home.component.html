@@ -1,16 +1,16 @@
 <div class="home-banner">
-    <div class="banner-overlay d-flex justify-content-center align-items-center">
-        <div class="banner-content d-flex flex-column align-items-center">
+    <div class="banner-overlay d-flex flex-column justify-content-center align-items-center">
+        <div class="title-container mb-2">
             <h1 class="title">Sixword</h1>
-            <h5 class="w-75 w-lg-50 font-weight-bold">The (un)friendly word game</h5>
-            <div class="d-flex flex-column align-items-center mt-3">
-                <button mat-raised-button type="button" class="btn btn-primary mb-3" (click)="randomiseGame()">Start New Game</button>
-                <button mat-raised-button type="button" class="btn btn-secondary" (click)="setupNewGame()">Customise Game</button>
-            </div>
+            <h5 class="sub-title font-weight-bold">The (un)friendly word game</h5>
+        </div>
+        <div class="d-flex flex-column align-items-center mt-3 mb-5">
+            <button mat-raised-button type="button" class="btn btn-primary mb-3" (click)="randomiseGame()">Start New Game</button>
+            <button mat-raised-button type="button" class="btn btn-secondary" (click)="setupNewGame()">Customise Game</button>
         </div>
     </div>
 </div>
-<div class="scroll-to-rules d-flex justify-content-center align-items-center" (onclick)="scrollToRules()">
+<div class="scroll-to-rules d-flex justify-content-center align-items-center" (click)="scrollToRules()">
     <h2 class="h1">Game Rules</h2>
 </div>
 <div class="home-section home-section-pink" id="firstRule">
